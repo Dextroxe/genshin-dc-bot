@@ -1,8 +1,9 @@
 import os
 
+
 from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(find_dotenv(".env.default"))
+load_dotenv(find_dotenv(".env"))
 load_dotenv(override=True)
 
 DISCORD_BOT_TOKEN = os.getenv("BOT_TOKEN")

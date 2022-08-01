@@ -12,8 +12,8 @@ class FarmRouteHandler(commands.Cog):
         self.start_up = False
 
     @commands.slash_command(
-        description="Finds a farming route for a resource",
-        guild_ids=guild_level.get_guild_ids(level=1),
+        description="Finds a farming route for a resource"
+        # guild_ids=guild_level.get_guild_ids(level=1),
     )
     async def route(
         self,

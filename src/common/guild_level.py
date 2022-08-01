@@ -9,7 +9,7 @@ def _get_env_var(key: str):
     return [int(x) for x in (os.getenv(key) or "").split(",") if x]
 
 
-MAX_LEVEL = 5
+MAX_LEVEL = 1
 GUILD_IDS = {i: _get_env_var(f"LEVEL_{i}_GUILDS") for i in range(1, MAX_LEVEL + 1)}
 
 
@@ -27,6 +27,7 @@ def get_guild_ids(level: int) -> List[int]:
     guild_ids = []
     for i in range(level, MAX_LEVEL + 1):
         guild_ids += GUILD_IDS[i]
+    # guild_ids=get_guild_ids(level=1)
     return guild_ids
 
 

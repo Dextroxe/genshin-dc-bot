@@ -2,6 +2,7 @@ import io
 from typing import Tuple, List, Union
 
 from PIL import Image, ImageFont, ImageDraw
+from numpy import empty
 
 from resources import RESOURCE_PATH
 
@@ -67,7 +68,7 @@ OFF_CORNER_SIZE = 14
 font = ImageFont.truetype(str(RESOURCE_PATH / "genshin.ttf"), 12, encoding="unic")
 
 
-def create_image_with_label(image: Union[bytes], label: str, resize_to=None) -> bytes:
+def create_image_with_label(image: Union[bytes,None], label: str, resize_to=None) -> bytes: #watch it emplty added
     """
     Create an image with a label at the bottom in Genshin style.
     """

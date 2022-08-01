@@ -1,7 +1,7 @@
 import unittest
 
-from datamodels.diary_action import DiaryAction
-from utils.ledger import merge_time_series
+from src.datamodels.diary_action import DiaryAction
+from src.utils.ledger import merge_time_series
 
 
 class LedgerTest(unittest.TestCase):

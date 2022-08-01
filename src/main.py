@@ -10,11 +10,11 @@ from common.db import session
 from common.logging import logger
 from datamodels import Base
 from datamodels.guild_settings import GuildSettings, GuildSettingKey
-from handlers import all_handlers, prefix_commands
+from handlers import all_handlers, prefix_commands #here
 from scheduling import dispatcher
 from utils.unified_context import UnifiedContext
 
-DEFAULT_PREFIX = "!"
+DEFAULT_PREFIX = "$"
 guild_prefix_lookup = defaultdict(lambda: DEFAULT_PREFIX)
 
 

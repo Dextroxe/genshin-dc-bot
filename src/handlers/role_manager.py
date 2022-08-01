@@ -64,7 +64,8 @@ class RoleManager(commands.Cog):
         self.bot = bot
 
     @commands.slash_command(
-        description="Get your own roles", guild_ids=guild_level.get_guild_ids(level=3)
+        description="Get your own roles" 
+        # guild_ids=guild_level.get_guild_ids(level=1)
     )
     async def roles(self, ctx: discord.ApplicationContext):
         await ctx.defer(ephemeral=True)

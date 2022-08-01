@@ -14,7 +14,8 @@ setting_autocomplete = autocomplete.fuzzy_autocomplete(list(ALL_KEYS.values()))
 class GuildSettingManager(commands.Cog):
     key_set = set(ALL_KEYS.values())
     guild = SlashCommandGroup(
-        "guild", "Guild-related commands", guild_ids=guild_level.get_guild_ids(level=1)
+        "guild", "Guild-related commands"
+        # guild_ids=guild_level.get_guild_ids(level=1)
     )
 
     def __init__(self, bot: discord.Bot = None):

@@ -138,9 +138,7 @@ class SpiralAbyssHandler(commands.Cog):
                                     chamber.halves.append(enemy_list)
 
                             image = await self._create_chamber_image(chamber)
-                            channel = await self.bot.fetch_channel(
-                                conf.IMAGE_HOSTING_CHANNEL_ID
-                            )
+                            channel = await self.bot.fetch_channel(conf.IMAGE_HOSTING_CHANNEL_ID)
                             message = await channel.send(
                                 file=discord.File(
                                     io.BytesIO(image),
@@ -163,8 +161,8 @@ class SpiralAbyssHandler(commands.Cog):
         return rotation.data
 
     @commands.slash_command(
-        description="Shows abyss lineup",
-        guild_ids=guild_level.get_guild_ids(level=1),
+        description="Shows abyss lineup"
+        # guild_ids=guild_level.get_guild_ids(level=3),
     )
     async def abyss(self, ctx):
         await ctx.defer()

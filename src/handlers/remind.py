@@ -30,15 +30,16 @@ class RemindHandler(commands.Cog):
     REMINDER_OPTIONS = list(REMINDER_TRANSLATE.keys())
 
     remind = SlashCommandGroup(
-        "remind", "Remind you to do things", guild_ids=guild_level.get_guild_ids(level=3)
+        "remind", "Remind you to do things"
+        # guild_ids=guild_level.get_guild_ids(level=1)
     )
 
     def __init__(self, bot: discord.Bot):
         self.bot = bot
 
     @remind.command(
-        description="Set a reminder",
-        guild_ids=guild_level.get_guild_ids(level=3),
+        description="Set a reminder"
+        # guild_ids=guild_level.get_guild_ids(level=1),
     )
     async def set(
             self,

@@ -21,7 +21,8 @@ from handlers import guild_manager
 
 class BirthdayHandler(commands.Cog):
     birthday = SlashCommandGroup(
-        "birthday", "Birthday reminders", guild_ids=guild_level.get_guild_ids(level=1)
+        "birthday", "Birthday reminders"
+        # guild_ids=guild_level.get_guild_ids(level=1)
     )
 
     def __init__(self, bot: discord.Bot = None):

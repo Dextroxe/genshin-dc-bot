@@ -13,7 +13,8 @@ from interfaces.route_loader import load_images
 
 class BotCommandHandler(commands.Cog):
     bot = SlashCommandGroup(
-        "bot", "Bot-related commands", guild_ids=guild_level.get_guild_ids(level=5)
+        "bot", "Bot-related commands"
+        # guild_ids=guild_level.get_guild_ids(level=1)
     )
 
     def __init__(self, bot: discord.Bot = None):
@@ -27,8 +28,8 @@ class BotCommandHandler(commands.Cog):
             self.start_up = True
 
     @bot.command(
-        description="Restarts the bot",
-        guild_ids=guild_level.get_guild_ids(level=5),
+        description="Restarts the bot"
+        # guild_ids=guild_level.get_guild_ids(level=1),
     )
     async def restart(self, ctx):
         await ctx.respond("Restarting...")
@@ -37,8 +38,8 @@ class BotCommandHandler(commands.Cog):
         os.execv(sys.executable, args)
 
     @bot.command(
-        description="Updates the bot",
-        guild_ids=guild_level.get_guild_ids(level=5),
+        description="Updates the bot"
+        # guild_ids=guild_level.get_guild_ids(level=1),
     )
     async def update(self, ctx):
         logger.info("Updating the bot")
@@ -63,16 +64,16 @@ class BotCommandHandler(commands.Cog):
         await ctx.respond("Bot updated")
 
     @bot.command(
-        description="Reloads route images",
-        guild_ids=guild_level.get_guild_ids(level=5),
+        description="Reloads route images"
+        # guild_ids=guild_level.get_guild_ids(level=1),
     )
     async def reload_routes(self, ctx):
         count = await load_images(self.bot)
         await ctx.respond(f"Reloaded {count} images")
 
     @bot.command(
-        description="Shows heartbeat latency",
-        guild_ids=guild_level.get_guild_ids(level=5),
+        description="Shows heartbeat latency"
+        # guild_ids=guild_level.get_guild_ids(level=1),
     )
     async def latency(self, ctx):
         await ctx.respond(f"Latency: {self.bot.latency*1000:.0f}ms")

@@ -24,6 +24,7 @@ from datamodels.genshin_user import GenshinUser, TokenExpiredError
 from datamodels.uid_mapping import UidMapping
 
 
+
 HELP_EMBED = discord.Embed(
     title="Genshin account linking guide",
     description="""
@@ -143,7 +144,7 @@ class UserManager(commands.Cog):
 
     @user.command(
         description="To remove a Genshin account registered with this bot",
-        guild_ids=guild_level.get_guild_ids(level=3),
+        # guild_ids=guild_level.get_guild_ids(level=1),
     )
     async def delete(
             self,
@@ -194,7 +195,7 @@ class UserManager(commands.Cog):
 
     @user.command(
         description="To enable or disable certain features",
-        guild_ids=guild_level.get_guild_ids(level=3),
+        # guild_ids=guild_level.get_guild_ids(level=1),
     )
     async def settings(self, ctx: ApplicationContext):
         await ctx.defer(ephemeral=True)
@@ -226,9 +227,11 @@ class UserManager(commands.Cog):
             )
 
             if ctx.guild:
-                _guild_level = guild_level.get_guild_level(ctx.guild.id)
+                _guild_level = 1
             else:
-                _guild_level = 3
+                _guild_level = 1
+
+                # _guild_level = guild_level.get_guild_level(ctx.guild.)
 
             await ctx.send_followup(
                 embed=embed,
@@ -279,37 +282,37 @@ ALL_PREFERENCES = [
         label="Daily checkin",
         description="Auto check-in and notify you",
         value=Preferences.DAILY_CHECKIN,
-        guild_level=3,
+        guild_level=1,
     ),
     PreferenceOption(
         label="Resin cap",
         description="Send you a message when your resin is capped",
         value=Preferences.RESIN_REMINDER,
-        guild_level=2,
+        guild_level=1,
     ),
     PreferenceOption(
         label="Expedition completion",
         description="Send you a message when expeditions are done",
         value=Preferences.EXPEDITION_REMINDER,
-        guild_level=2,
+        guild_level=1,
     ),
     PreferenceOption(
         label="Teapot coin cap",
         description="Send you a message when your teapot coins are capped",
         value=Preferences.TEAPOT_REMINDER,
-        guild_level=2,
+        guild_level=1,
     ),
     PreferenceOption(
         label="Parametric transformer reminder",
         description="Send you a message when transformer is ready",
         value=Preferences.PARAMETRIC_TRANSFORMER,
-        guild_level=2,
+        guild_level=1,
     ),
     PreferenceOption(
         label="Auto code redemption",
         description="New codes are auto-redeemed when found",
         value=Preferences.AUTO_REDEEM,
-        guild_level=3,
+        guild_level=1,
     ),
 ]
 
@@ -328,7 +331,7 @@ class PreferencesDropdown(discord.ui.Select["Preferences"]):
                 default=self.account.settings[pref.value],
             )
             for pref in ALL_PREFERENCES
-            if guild_level >= pref.guild_level
+            if guild_level == pref.guild_level
         ]
 
         if not self.account:
@@ -357,7 +360,7 @@ class PreferencesDropdown(discord.ui.Select["Preferences"]):
         await interaction.response.defer()
 
 
-class UidDropdown(discord.ui.Select["UidSettings"]):
+class UidDropdown(discord.ui.Select["AccountInfo"]): #UidSettings
     def __init__(self, mihoyo_id: int, accounts: List[GenshinAccount]):
         super().__init__()
         self.mihoyo_id = mihoyo_id
