@@ -2,7 +2,6 @@ import io
 from typing import Tuple, List, Union
 
 from PIL import Image, ImageFont, ImageDraw
-from numpy import empty
 
 from resources import RESOURCE_PATH
 
