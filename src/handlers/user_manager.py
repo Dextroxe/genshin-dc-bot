@@ -151,7 +151,7 @@ class UserManager(commands.Cog):
             ctx: ApplicationContext,
             ltuid: Option(str, "Mihoyo account ID", autocomplete=get_account_suggestions),
     ):
-        mihoyo_id = BigInteger(ltuid)
+        mihoyo_id = int(ltuid)
         account = session.get(GenshinUser, (mihoyo_id,))
 
         if not account:
