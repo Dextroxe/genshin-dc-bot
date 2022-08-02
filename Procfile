@@ -1,2 +1,2 @@
 worker: python src/main.py
-heroku addons:create heroku-postgresql:hobby-dev
+heroku addons:create heroku-postgres:hobby-dev
