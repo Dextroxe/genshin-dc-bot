@@ -11,7 +11,7 @@ from discord import (
 )
 from discord.ext import commands
 from genshin.models import GenshinAccount
-from sqlalchemy import select, delete, func
+from sqlalchemy import BigInteger, select, delete, func
 from tenacity import wait_fixed, stop_after_attempt, retry, retry_if_exception_type
 
 from common import guild_level
@@ -151,7 +151,7 @@ class UserManager(commands.Cog):
             ctx: ApplicationContext,
             ltuid: Option(str, "Mihoyo account ID", autocomplete=get_account_suggestions),
     ):
-        mihoyo_id = int(ltuid)
+        mihoyo_id = BigInteger(ltuid)
         account = session.get(GenshinUser, (mihoyo_id,))
 
         if not account:
