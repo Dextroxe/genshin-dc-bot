@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Text, DateTime, Integer
+from sqlalchemy import Column, String, Text, DateTime, BIGINT
 
 from datamodels import Base
 
@@ -17,5 +17,5 @@ class GenshinEvent(Base):
 class EventSource(Base):
     __tablename__ = "eventsource"
 
-    channel_id = Column(Integer, primary_key=True)
+    channel_id = Column(BIGINT, primary_key=True)
     read_until = Column(DateTime)

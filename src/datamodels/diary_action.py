@@ -1,7 +1,7 @@
 import datetime
 import enum
 
-from sqlalchemy import Integer, Column, String, Identity, ForeignKey
+from sqlalchemy import BIGINT, Column, String, Identity, ForeignKey
 from sqlalchemy.orm import relationship
 
 from common.genshin_server import ServerEnum
@@ -11,17 +11,17 @@ from datamodels import Base
 class DiaryAction(Base):
     __tablename__ = "diaryactions"
 
-    id = Column(Integer, Identity(), primary_key=True)
-    uid = Column(Integer, nullable=False)
-    year = Column(Integer, nullable=False)
-    month = Column(Integer, nullable=False)
-    type = Column(Integer, nullable=False)
-    action_id = Column(Integer, nullable=False)
+    id = Column(BIGINT, Identity(), primary_key=True)
+    uid = Column(BIGINT, nullable=False)
+    year = Column(BIGINT, nullable=False)
+    month = Column(BIGINT, nullable=False)
+    type = Column(BIGINT, nullable=False)
+    action_id = Column(BIGINT, nullable=False)
     action = Column(String(100), nullable=False)
-    timestamp = Column(Integer, nullable=False, index=True)
-    amount = Column(Integer, nullable=False)
+    timestamp = Column(BIGINT, nullable=False, index=True)
+    amount = Column(BIGINT, nullable=False)
     span_id = Column(
-        Integer, ForeignKey("_diaryactionspan.id", ondelete="CASCADE"), nullable=False
+        BIGINT, ForeignKey("_diaryactionspan.id", ondelete="CASCADE"), nullable=False
     )
     span = relationship("DiaryActionSpan")
 
@@ -35,9 +35,9 @@ class DiaryAction(Base):
 class DiaryActionSpan(Base):
     __tablename__ = "_diaryactionspan"
 
-    id = Column(Integer, Identity(), primary_key=True)
-    start_ts = Column(Integer, nullable=False)
-    end_ts = Column(Integer, nullable=False)
+    id = Column(BIGINT, Identity(), primary_key=True)
+    start_ts = Column(BIGINT, nullable=False)
+    end_ts = Column(BIGINT, nullable=False)
 
 
 class DiaryType(enum.Enum):

@@ -1,7 +1,7 @@
 from typing import Dict, Any, List, Optional
 
 import genshin
-from sqlalchemy import Integer, String, Column, Text
+from sqlalchemy import BIGINT, String, Column, Text
 from sqlalchemy.orm import relationship
 
 import common.constants
@@ -11,8 +11,8 @@ from datamodels import Base
 class GenshinUser(Base):
     __tablename__ = "genshinuser"
 
-    mihoyo_id = Column(Integer, primary_key=True)
-    discord_id = Column(Integer, nullable=False, index=True)
+    mihoyo_id = Column(BIGINT, primary_key=True)
+    discord_id = Column(BIGINT, nullable=False, index=True)
 
     mihoyo_token = Column(String(100))  # for Code redemption, a.k.a. cookie_token
     hoyolab_token = Column(String(100))  # for Hoyolab access, a.k.a. ltoken

@@ -1,4 +1,4 @@
-from sqlalchemy import Integer, Column, String, Boolean, DateTime
+from sqlalchemy import BIGINT, Column, String, Boolean, DateTime
 
 from datamodels import Base, Jsonizable
 
@@ -15,7 +15,7 @@ class ScheduledItem(Base):
 
     __tablename__ = "schedule"
 
-    id = Column(Integer, primary_key=True)
+    id = Column(BIGINT, primary_key=True)
     type = Column(String(100), primary_key=True)
     scheduled_at = Column(
         DateTime, nullable=False, index=True
