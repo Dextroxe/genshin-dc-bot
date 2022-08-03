@@ -246,4 +246,4 @@ class ShowcaseView(discord.ui.View):
         if character_index != None:
             self.add_item(CharacterStatButton(showcase, character_index))
             self.add_item(CharacterArtifactButton(showcase ,character_index))
-        self.add_item(ShowcaseCharactersDropdown(showcase))  
+            self.add_item(ShowcaseCharactersDropdown(showcase))  
