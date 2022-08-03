@@ -1,15 +1,13 @@
-from cProfile import label
-from cv2 import seamlessClone
 import discord
 import asyncio
 import genshin
 # from discord import app_commands
-from typing import Optional,List
+from typing import List
 from discord.ext import commands
 # from utils.GenshinApp import genshin_app
 from utils.draw import drawRecordCard, drawAbyssCard
 # from discord.app_commands import Choice
-from typing import Sequence, Union, Tuple
+from typing import Union
 # from utils.config import config
 # from utils.emoji import emoji
 from utils.game_notes import getCharacterName
