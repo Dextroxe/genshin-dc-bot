@@ -1,4 +1,5 @@
 import dataclasses
+from http import client
 import io
 
 import aiohttp
@@ -6,8 +7,9 @@ import discord
 from dateutil.parser import parse
 from discord.ext import commands
 from sqlalchemy import select
-
+import genshin
 from common import guild_level, conf
+
 from common.db import session
 from common.genshin_server import ServerEnum
 from datamodels.spiral_abyss import SpiralAbyssRotation
@@ -65,7 +67,7 @@ class SpiralAbyssHandler(commands.Cog):
             return create_collage(1, half_images, padding=4)
 
     async def get_abyss_lineup(self) -> list[dict]:
-        current_time = ServerEnum.NORTH_AMERICA.current_time.replace(tzinfo=None)
+        current_time = ServerEnum.ASIA.current_time.replace(tzinfo=None)
         rotations = (
             session.execute(
                 select(SpiralAbyssRotation).where(
@@ -138,7 +140,9 @@ class SpiralAbyssHandler(commands.Cog):
                                     chamber.halves.append(enemy_list)
 
                             image = await self._create_chamber_image(chamber)
-                            channel = await self.bot.fetch_channel(conf.IMAGE_HOSTING_CHANNEL_ID)
+                            channel = await self.bot.fetch_channel(
+                                conf.IMAGE_HOSTING_CHANNEL_ID
+                            )
                             message = await channel.send(
                                 file=discord.File(
                                     io.BytesIO(image),
@@ -164,7 +168,7 @@ class SpiralAbyssHandler(commands.Cog):
         description="Shows abyss lineup"
         # guild_ids=guild_level.get_guild_ids(level=3),
     )
-    async def abyss(self, ctx):
+    async def abyss_lineup(self, ctx):
         await ctx.defer()
         floors = await self.get_abyss_lineup()
         view = AbyssLineupView(ctx=ctx, floor_data=floors)
@@ -261,3 +265,4 @@ class AbyssLineupView(discord.ui.View):
             item.disabled = True
         message = await self.ctx.interaction.original_message()
         await message.edit(view=self)
+

@@ -1,0 +1,47 @@
+{
+    "notes": {
+        "resin": "<:resin:987269879688208424>",
+        "realm_currency": "<:realmcurrency:987269869248606228>",
+        "commission": "<:commision:987269788780888074>",
+        "enemies_of_note": "<:guide:987269783361839115>",
+        "transformer": "<:transformers:987269889825849344>",
+        "think": "<:search:987357570308124672>"
+    },
+    "items": {
+        "mora": "<:Mora:987356929854672927>",
+        "primogem": "<:primogem:987356904915366028>",
+        "intertwined_fate": "<:fate:987269821215432724>"
+    },
+    "elements": {
+        "anemo": "<:anemo:987269777946976256>",
+        "cryo": "<:cryo:987269793625280542>",
+        "dendro": "<:dendro:987269798612336671>",
+        "electro": "<:electro:987269805583249468>",
+        "geo": "<:geo:987269826219237456>",
+        "hydro": "<:hydro:987269830405144616>",
+        "pyro": "<:pyro:987269858762834032>"
+    },
+
+
+    "fightprop": {
+        "FIGHT_PROP_HP": "<:HP:992055506506108960>",
+        "FIGHT_PROP_HP_PERCENT": "<:HP_PERCENT:992054582203121675>",
+        "FIGHT_PROP_ATTACK": "<:ATTACK:992055850904588299>",
+        "FIGHT_PROP_ATTACK_PERCENT": "<:ATTACK_PERCENT:992054237351645345>",
+        "FIGHT_PROP_DEFENSE": "<:DEFENSE:992055685007294515>",
+        "FIGHT_PROP_DEFENSE_PERCENT": "<:DEFENSE_PERCENT:992054660816965712>",
+        "FIGHT_PROP_CRITICAL": "<:CRITICAL:992054494122741790>",
+        "FIGHT_PROP_CRITICAL_HURT": "<:CRITICAL_HURT:992054405794889788>",
+        "FIGHT_PROP_CHARGE_EFFICIENCY": "<:CHARGE_EFFICIENCY:992055774194962513>",
+        "FIGHT_PROP_HEAL_ADD": "<:HEAL_ADD:992055575485612132>",
+        "FIGHT_PROP_ELEMENT_MASTERY": "<:ELEMENT_MASTERY:992055219401793537>",
+        "FIGHT_PROP_PHYSICAL_ADD_HURT": "<:PHYSICAL_ADD_HURT:992055437316861972>",
+        "FIGHT_PROP_FIRE_ADD_HURT": "<:pyro:987269858762834032>",
+        "FIGHT_PROP_ELEC_ADD_HURT": "<:electro:987269805583249468>",
+        "FIGHT_PROP_WATER_ADD_HURT": "<:hydro:987269830405144616>",
+        "FIGHT_PROP_GRASS_ADD_HURT": "<:dendro:987269798612336671>",
+        "FIGHT_PROP_WIND_ADD_HURT": "<:anemo:987269777946976256>",
+        "FIGHT_PROP_ROCK_ADD_HURT": "<:geo:987269826219237456>",
+        "FIGHT_PROP_ICE_ADD_HURT": "<:cryo:987269793625280542>"
+    }
+}

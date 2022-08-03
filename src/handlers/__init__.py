@@ -15,6 +15,8 @@ from handlers import (
     emotes,
     spiral_abyss,
     remind,
+    enka_info,
+    abyss_info,
 )
 
 all_handlers = [
@@ -31,6 +33,8 @@ all_handlers = [
     emotes.EmoteHandler,
     spiral_abyss.SpiralAbyssHandler,
     remind.RemindHandler,
+    enka_info.game_infoHandler,
+    abyss_info.abyssHandler,
 
     # Tasks
     notes_monitor.RealTimeNotesMonitor,
@@ -49,3 +53,5 @@ except ModuleNotFoundError:
 
 # Adding a command (implemented with application command) to this list will also enable a prefix version of it
 prefix_commands = [(game_info.GameInfoHandler, ["resin"])]
+# prefix_commands = [(enka_info.game_infoHandler, ["enka.network"])]
+
