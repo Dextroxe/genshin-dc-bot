@@ -212,13 +212,6 @@ class ShowcaseCharactersDropdown(discord.ui.Select):
                 emoji=emoji.elements.get(element.lower())
             ))
         super().__init__(placeholder=f'Find a showcase character:', options=options)
-    
-    async def callback(self, interaction: discord.Interaction) -> None:
-        character_index = int(self.values[0])
-        embed = self.showcase.getCharacterStatEmbed(character_index)
-        view = ShowcaseView(self.showcase, character_index)
-        await interaction.response.edit_message(embed=embed, view=view)
-
 class CharacterStatButton(discord.ui.Button):
     """Character panel buttons"""
     showcase: Showcase
@@ -253,4 +246,4 @@ class ShowcaseView(discord.ui.View):
         if character_index != None:
             self.add_item(CharacterStatButton(showcase, character_index))
             self.add_item(CharacterArtifactButton(showcase ,character_index))
-        self.add_item(ShowcaseCharactersDropdown(showcase))
+        self.add_item(ShowcaseCharactersDropdown(showcase))  

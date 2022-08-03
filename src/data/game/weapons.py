@@ -20,6 +20,7 @@ weapons_map = {
  11413: {'name': 'Festering Desire', 'rarity': 4},
  11414: {'name': 'Amenoma Kageuchi', 'rarity': 4},
  11415: {'name': 'Cinnabar Spindle', 'rarity': 4},
+ 11416: {'name': 'Kagotsurube Isshin', 'rarity': 4},
  11501: {'name': 'Aquila Favonia', 'rarity': 5},
  11502: {'name': 'Skyward Blade', 'rarity': 5},
  11503: {'name': 'Freedom Sworn', 'rarity': 5},
