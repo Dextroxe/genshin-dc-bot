@@ -9,14 +9,14 @@ from handlers import (
     redeem_codes,
     farm_route,
     bot_manager,
-    genshin_events,
+    # genshin_events,
     genshin_codes,
     role_manager,
     emotes,
     spiral_abyss,
     remind,
     enka_info,
-    abyss_info,
+    # abyss_info,
 )
 
 all_handlers = [
@@ -34,12 +34,12 @@ all_handlers = [
     spiral_abyss.SpiralAbyssHandler,
     remind.RemindHandler,
     enka_info.game_infoHandler,
-    abyss_info.abyssHandler,
+    # abyss_info.abyssHandler,
 
     # Tasks
     notes_monitor.RealTimeNotesMonitor,
     daily_checkin.HoyolabDailyCheckin,
-    genshin_events.GenshinEventScanner,
+    # genshin_events.GenshinEventScanner,
     genshin_codes.GenshinCodeScanner,
 ]
 

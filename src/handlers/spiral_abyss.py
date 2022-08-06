@@ -8,8 +8,7 @@ from dateutil.parser import parse
 from discord.ext import commands
 from sqlalchemy import select
 import genshin
-from common import guild_level, conf
-
+from common import conf
 from common.db import session
 from common.genshin_server import ServerEnum
 from datamodels.spiral_abyss import SpiralAbyssRotation
