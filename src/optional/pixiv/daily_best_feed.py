@@ -42,7 +42,7 @@ class DailyBestIllustFeed(commands.Cog):
 
         feed_channel = await self.bot.fetch_channel(conf.PIXIV_CHANNEL_ID)
         most_popular = []
-        for page in range(200):
+        for page in range(50):
             logger.info(f"Fetching Pixiv page {page}")
             for illust in result.illusts:
                 try:
@@ -84,7 +84,7 @@ class DailyBestIllustFeed(commands.Cog):
                 break
 
             result = self.api.search_illust(**next_qs)
-            await asyncio.sleep(1)
+            await asyncio.sleep(5)
         else:
             logger.warn("Loop ends without expected break (Too many illusts)")
 

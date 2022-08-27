@@ -117,5 +117,8 @@ namecards_map = {
     210120: {'Card': 'UI_NameCardPic_Shinobu_P'},
     210121: {'Card': 'UI_NameCardPic_Bp15_P'},
     210122: {'Card': 'UI_NameCardPic_Heizo_P'},
-    210123: {'Card': 'UI_NameCardPic_Bp16_P'}
-}
+    210123: {'Card': 'UI_NameCardPic_Bp16_P'},
+    210124: {'Card': 'UI_NameCardPic_Tighnari_P'},
+    210125: {'Card': 'UI_NameCardPic_collei_P'},
+    210126: {'Card': 'UI_NameCardPic_Dori_P'},
+    210127: {'Card': 'UI_NameCardPic_Bp17_P'},}
